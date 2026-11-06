@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senin Türkiyen</title>
+<meta name="description" content="Adını, soyadını, doğum yılını ve ilini yaz: adın hangi yıllarda modaydı, soyadın nerede yaygın, Türkiye'nin yüzde kaçı senden yaşlı, ilin nerede duruyor? Hiçbir bilgi tarayıcından çıkmaz.">
+<meta property="og:title" content="Senin Türkiyen">
+<meta property="og:description" content="Adın, soyadın, doğum yılın ve ilin: Türkiye'deki yerin tek kartta. Hiçbir bilgi tarayıcından çıkmaz.">
+<meta property="og:image" content="https://birtohum.github.io/senin-turkiyen/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 32%22%3E%3Crect width=%2224%22 height=%2232%22 rx=%223%22 fill=%22%236d0f24%22/%3E%3Ccircle cx=%2212%22 cy=%2213%22 r=%225%22 fill=%22none%22 stroke=%22%23e8c56b%22 stroke-width=%221.6%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bordo:#5c0c1f;--koyu:#3d0714;--altin:#e8c56b;--krem:#f8f0dd;--soluk:#dcb9a6;--cizgi:#8a3a4a}
+*{box-sizing:border-box}
+html{background:var(--koyu)}
+body{margin:0;background:radial-gradient(1200px 800px at 50% 0,#7a1530 0,var(--bordo) 45%,var(--koyu) 100%) no-repeat var(--koyu);color:var(--krem);font:17px/1.55 Jost,system-ui,sans-serif;min-height:100vh}
+a{color:var(--altin)}
+main{max-width:980px;margin:0 auto;padding:44px 16px 30px}
+.ust{font-weight:500;letter-spacing:.32em;text-transform:uppercase;font-size:.78rem;color:var(--altin);margin:0 0 12px}
+h1{font:400 clamp(3rem,10vw,6.4rem)/.95 "DM Serif Display",Georgia,serif;margin:0;color:var(--altin)}
+h1 em{color:var(--krem);font-style:italic}
+.lede{font-size:1.15rem;max-width:58ch;margin:16px 0 0;color:var(--soluk)}
+form{display:grid;grid-template-columns:1fr 1fr .7fr 1fr auto;gap:10px;margin:28px 0 0;align-items:end}
+label{display:grid;gap:4px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soluk)}
+input,select{font:500 1.05rem Jost,sans-serif;min-height:50px;width:100%;padding:0 12px;border-radius:4px;border:1px solid var(--altin);background:rgba(0,0,0,.2);color:var(--krem)}
+select option{color:#111}
+button{font:600 1rem Jost,sans-serif;min-height:50px;padding:0 22px;border:0;border-radius:4px;background:var(--altin);color:var(--koyu);cursor:pointer}
+button.ikinci{background:none;border:1px solid var(--altin);color:var(--altin)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.gizli{font-size:.92rem;color:var(--soluk);margin:10px 0 0}
+.ornek{display:inline-block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--soluk);color:var(--soluk);padding:3px 10px;border-radius:99px;margin:26px 0 0}
+.kisi{font:400 clamp(2.2rem,6vw,3.8rem)/1.05 "DM Serif Display",Georgia,serif;margin:12px 0 0;color:var(--krem)}
+.kisi small{display:block;font:500 1rem Jost,sans-serif;color:var(--soluk);letter-spacing:.06em;margin-top:6px}
+.damgalar{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0 0}
+.damga{position:relative;border:2px solid var(--altin);border-radius:10px;padding:18px 20px 16px;outline:1px solid var(--altin);outline-offset:-7px;background:rgba(0,0,0,.14)}
+.damga h2{margin:0 0 6px;font:500 .76rem Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--altin)}
+.damga b{display:block;font:400 clamp(1.55rem,3.3vw,2.25rem)/1.08 "DM Serif Display",Georgia,serif;color:var(--krem)}
+.damga b em{font-style:normal;color:var(--altin)}
+.damga b{font-weight:400}
+.damga p{margin:8px 0 0;font-size:.95rem;color:var(--soluk)}
+.damga a{font-size:.85rem}
+.secim{display:flex;gap:6px;margin-top:10px}
+.secim button{min-height:34px;padding:0 12px;font-size:.82rem;background:none;border:1px solid var(--cizgi);color:var(--soluk)}
+.secim button[aria-pressed="true"]{background:var(--altin);border-color:var(--altin);color:var(--koyu)}
+.eylem{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;align-items:center}
+.not{font-size:.9rem;color:var(--soluk)}
+footer{max-width:980px;margin:0 auto;padding:26px 16px 40px;font-size:.88rem;color:var(--soluk);border-top:1px solid var(--cizgi)}
+footer p{margin:6px 0;max-width:76ch}
+[hidden]{display:none!important}
+@media (max-width:820px){form{grid-template-columns:1fr 1fr}form button{grid-column:1/-1}.damgalar{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+  <p class="ust">Sayılarla sen</p>
+  <h1>Senin <em>Türkiyen</em></h1>
+  <p class="lede">Adın hangi yıllarda modaydı, soyadın en çok nerede yaygın, Türkiye'nin yüzde kaçı senden yaşlı, ilin nerede duruyor?</p>
+  <form id="form" autocomplete="off">
+    <label>Adın<input id="ad" maxlength="30" autocomplete="off" required></label>
+    <label>Soyadın<input id="soy" maxlength="30" autocomplete="off"></label>
+    <label>Doğum yılın<input id="yil" type="number" min="1930" max="2025" inputmode="numeric" required></label>
+    <label>İlin<select id="il" required></select></label>
+    <button>Kartımı çıkar</button>
+  </form>
+  <p class="gizli">Yazdıkların tarayıcından çıkmaz: hesap senin cihazında yapılır, bir yere gönderilmez, adrese yazılmaz.</p>
+
+  <div id="sonuc" aria-live="polite" hidden>
+    <span class="ornek" id="ornek">Örnek</span>
+    <div class="kisi" id="kisi"></div>
+    <div class="damgalar" id="damgalar"></div>
+    <div class="eylem"><button id="indir" type="button">Kartı indir</button><button class="ikinci" id="paylas" type="button">Paylaş</button><span class="not" id="not"></span></div>
+    <p class="not">Kartta soyadın yazmaz, yalnız adın, doğum yılın ve ilin. İstersen indirmeden önce adını değiştirebilirsin.</p>
+  </div>
+</main>
+<footer>
+  <p><b>Veri:</b> Kendi sitelerimden: <a href="https://birtohum.github.io/adin-kac-yasinda/">Adın kaç yaşında?</a> (TÜİK, 1.205 isim), <a href="https://birtohum.github.io/soyadin-nereli/">Soyadın nereli?</a> (TÜİK, ilk 30), <a href="https://birtohum.github.io/kac-kisi-senden-yasli/">Kaç kişi senden yaşlı?</a> (TÜİK, 2025) ve <a href="https://birtohum.github.io/il-kimligi/">İlin Kimliği</a>.</p>
+  <p><b>Sınırlar:</b> İsim sıraları, o yıl doğup bugün yaşayanlar arasındadır. Soyadlarında TÜİK yalnız ilk 30'u yayımlıyor; listede olmamak nadir olmak demek değildir. Yaş oranı 5 yaşlık gruplardan yaklaşık hesaplanır. Resmî bir belge değildir.</p>
+  <p>Kod: <a href="https://github.com/birtohum/senin-turkiyen">github.com/birtohum/senin-turkiyen</a> · <a href="https://birtohum.github.io/">birtohum</a></p>
+</footer>
+<canvas id="tuval" width="1080" height="1350" hidden></canvas>
+<script src="uygulama.js"></script>
+<script data-goatcounter="https://birtohum.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
